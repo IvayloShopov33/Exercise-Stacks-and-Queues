@@ -4,18 +4,23 @@
     {
         static void Main(string[] args)
         {
+            Stack<int> stackOfTheNumbers = new Stack<int>();
             int[] numbersToTakeAction = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            Stack<int> stackOfTheNumbers = new Stack<int>();
             for (int i = 0; i < numbersToTakeAction[0]; i++)
             {
-                stackOfTheNumbers.Push(numbers[i]); //push the numbers to the stack
+                //push the numbers to the stack
+                stackOfTheNumbers.Push(numbers[i]);
             }
+            
             for (int i = 0; i < numbersToTakeAction[1]; i++)
             {
-                stackOfTheNumbers.Pop(); //remove N numbers from the stack
+                //remove N numbers from the stack
+                stackOfTheNumbers.Pop();
             }
-            if (stackOfTheNumbers.Count == 0) //check if the stack is emty
+            
+            //check if the stack is emty
+            if (stackOfTheNumbers.Count == 0) 
             {
                 Console.WriteLine(0);
             }
@@ -25,7 +30,8 @@
             }
             else
             {
-                Console.WriteLine(stackOfTheNumbers.Min()); //takes the smallest number from the stack
+                //takes the smallest number from the stack
+                Console.WriteLine(stackOfTheNumbers.Min());
             }
         }
     }

@@ -8,21 +8,22 @@
             string[] initialSongs = Console.ReadLine().Split(", ");
             foreach (string song in initialSongs)
             {
-                songs.Enqueue(song); //put the songs to the queue
+                songs.Enqueue(song);
             }
+            
             string[] commands;
             while (true)
             {
-                if (songs.Count==0) //check if the queue of songs is empty
+                if (songs.Count==0)
                 {
                     Console.WriteLine("No more songs!");
                     break;
                 }
-                //logic for different commands
+                
                 commands = Console.ReadLine().Split();
                 if (commands[0]=="Play")
                 {
-                    songs.Dequeue(); //remove the first song from the queue
+                    songs.Dequeue();
                 }
                 else if (commands[0]=="Add")
                 {
@@ -31,15 +32,18 @@
                     {
                         songName += commands[i]+ " ";
                     }
+                    
                     songName=songName.Trim();
-                    if (!songs.Contains(songName)) //check if the queue contains that specific song
+
+                    //check if the queue contains that specific song
+                    if (!songs.Contains(songName)) 
                         songs.Enqueue(songName);
                     else
                         Console.WriteLine($"{songName} is already contained!");
                 }
                 else if (commands[0]=="Show")
                 {
-                    Console.WriteLine(string.Join(", ", songs)); //print the songs from the queue
+                    Console.WriteLine(string.Join(", ", songs));
                 }
 
             }

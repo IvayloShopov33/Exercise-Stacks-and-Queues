@@ -9,22 +9,31 @@
             int[] ordersQuantities = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
             foreach (int order in ordersQuantities)
             {
-                orders.Enqueue(order); //put the order to the queue
+                //put the order to the queue
+                orders.Enqueue(order);
             }
-            Console.WriteLine(orders.Max()); //print the biggest order
+
+            //print the biggest order
+            Console.WriteLine(orders.Max()); 
             foreach (int orderToServe in ordersQuantities)
             {
-                if (foodQuantity < orderToServe) //check if the quantity of food is finished
+                //check if the quantity of food is finished
+                if (foodQuantity < orderToServe) 
                 {
                     Console.WriteLine($"Orders left: {string.Join(' ', orders)}");
                     break;
                 }
+                
                 foodQuantity -= orderToServe; //reduce the quantity of food
-                orders.Dequeue(); //remove the served order from the queue
+                //remove the served order from the queue
+                orders.Dequeue(); 
             }
-
-            if (orders.Count == 0) //check if the orders are complete or not
-                Console.WriteLine("Orders complete");
+            
+            //check if the orders are complete or not
+            if (orders.Count == 0) 
+            {
+                Console.WriteLine("Orders complete");             
+            }
         }
     }
 }

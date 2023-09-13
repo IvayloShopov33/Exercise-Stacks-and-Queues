@@ -10,8 +10,9 @@
             int initialCapacityOfARack = capacityOfARack;
             foreach (int garment in arrayOfClothes)
             {
-                clothes.Push(garment); //push the item to the stack
+                clothes.Push(garment);
             }
+            
             int countOfRacks = 1;
             foreach (int item in clothes.ToList())
             {
@@ -31,8 +32,10 @@
                 {
                     capacityOfARack -= item;
                 }
-                clothes.Pop(); //remove the item from the stack
+                
+                clothes.Pop();
             }
+            
             if (clothes.Count == 0)
                 Console.WriteLine(countOfRacks);
         }

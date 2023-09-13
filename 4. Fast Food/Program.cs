@@ -24,7 +24,7 @@
                     break;
                 }
                 
-                foodQuantity -= orderToServe; //reduce the quantity of food
+                foodQuantity -= orderToServe;
                 //remove the served order from the queue
                 orders.Dequeue(); 
             }

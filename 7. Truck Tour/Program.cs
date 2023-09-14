@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            int pumpStation=int.Parse(Console.ReadLine());
             Queue<int[]> tourOfTheTruck = new Queue<int[]>();
+            int pumpStation=int.Parse(Console.ReadLine());
             for (int i = 0; i < pumpStation; i++)
             {
                 int[] pumpDetails = Console.ReadLine().Split().Select(int.Parse).ToArray();  
@@ -13,6 +13,7 @@
                 int distance = pumpDetails[1];
                 tourOfTheTruck.Enqueue(new int[] { petrol, distance });
             }
+            
             int startIndex = 0;
             while (true)
             {
@@ -30,6 +31,7 @@
                         break;
                     }
                 }
+                
                 if (currentPetrol>=0)
                 {
                     Console.WriteLine(startIndex);

@@ -56,6 +56,7 @@
                         cars.Enqueue(commandOrCar);
                     }
                 }
+                
                 commandOrCar = Console.ReadLine();
             }
 

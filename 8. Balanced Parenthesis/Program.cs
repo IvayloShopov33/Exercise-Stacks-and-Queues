@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            string parentheses = Console.ReadLine();
             Stack<char> balancedParentheses = new Stack<char>();
+            string parentheses = Console.ReadLine();
             bool isBalanced = true;
             int countOfOpenBrackets = 0;
             int countOfClosedBrackets = 0;
@@ -38,11 +38,14 @@
                 }
             }
 
-                if (isBalanced && countOfOpenBrackets==countOfClosedBrackets)
-                    Console.WriteLine("YES");
-                else
-                    Console.WriteLine("NO");
-            
+            if (isBalanced && countOfOpenBrackets==countOfClosedBrackets)
+            {
+                Console.WriteLine("YES");
+            }                    
+            else 
+            {
+                Console.WriteLine("NO");       
+            }              
         }
     }
 }
